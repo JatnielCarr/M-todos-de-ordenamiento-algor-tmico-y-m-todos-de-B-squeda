@@ -1,0 +1,28 @@
+# Archivo .gitignore para proyectos .NET / C#
+# Este archivo evita que se suban al repositorio archivos generados
+# automáticamente, configuraciones locales y otros archivos innecesarios.
+
+## Carpetas de compilación de .NET
+# Contienen los archivos ejecutables (.exe, .dll) y archivos intermedios.
+# Se generan cada vez que compilas el proyecto.
+[Bb]in/
+[Oo]bj/
+
+## Archivos del IDE (Visual Studio)
+# La carpeta .vs contiene configuraciones de la sesión actual, como qué archivos
+# tienes abiertos. Los archivos .user y .suo guardan configuraciones personales.
+.vs/
+*.suo
+*.user
+
+## Archivos del IDE (JetBrains Rider)
+.idea/
+
+## Archivos de registro (Logs)
+# Si tu aplicación genera archivos de log, es mejor ignorarlos.
+*.log
+
+## Archivos generados por el sistema operativo
+# Archivos de caché de miniaturas de Windows y metadatos de macOS.
+Thumbs.db
+.DS_Store
