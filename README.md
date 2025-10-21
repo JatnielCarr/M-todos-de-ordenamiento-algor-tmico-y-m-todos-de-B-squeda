@@ -30,6 +30,7 @@ dotnet run
 ### 🔢 Métodos Algorítmicos
 - **Heapsort**: Ordenamiento por montículo con visualización de construcción del heap
 - **MergeSort**: Ordenamiento por mezcla (divide y conquista) con seguimiento de divisiones
+- **Quicksort**: Ordenamiento rápido con estrategia de pivote y particiones
 
 ### 🔍 Algoritmos de Búsqueda
 - **Búsqueda por Interpolación**: Estimación inteligente de posición basada en valores (requiere ordenar)

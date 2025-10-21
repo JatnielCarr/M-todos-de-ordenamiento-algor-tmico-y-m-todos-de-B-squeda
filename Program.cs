@@ -60,7 +60,8 @@ namespace MetodosAlgoritmicosyBusqueda
         static List<ISorter> Sorters = new List<ISorter>
         {
             new HeapSorter(),        // Algoritmo 1: Heapsort (ordenamiento por montículo)
-            new MergeSorter()        // Algoritmo 2: MergeSort (ordenamiento por mezcla - divide y conquista)
+            new MergeSorter(),       // Algoritmo 2: MergeSort (ordenamiento por mezcla - divide y conquista)
+            new QuickSorter()        // Algoritmo 3: Quicksort (ordenamiento rápido - divide y conquista con pivote)
         };
 
         // SEARCHERS: Lista de algoritmos de búsqueda disponibles
