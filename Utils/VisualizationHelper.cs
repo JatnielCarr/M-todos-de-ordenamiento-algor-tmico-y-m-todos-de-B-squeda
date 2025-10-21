@@ -156,5 +156,19 @@ namespace MetodosAlgoritmicosyBusqueda
                 // El "_" es el caso por defecto, como "default" en un switch normal
             }
         }
+        
+        // ================================================================================================
+        // MÉTODO WAITFORUSER - Espera a que el usuario presione Enter
+        // ================================================================================================
+        // Este método pausa la ejecución hasta que el usuario presione Enter.
+        // Es útil para el modo paso a paso donde queremos que el usuario vea cada paso.
+        public static void WaitForUser()
+        {
+            if (ShowStepByStep)
+            {
+                Console.WriteLine("\n[Presiona Enter para continuar...]");
+                Console.ReadLine();
+            }
+        }
     }
 }

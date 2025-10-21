@@ -45,35 +45,34 @@ namespace MetodosAlgoritmicosyBusqueda
         // Lo creamos UNA VEZ al inicio y lo usamos en todos los menús.
         static DataManager dataManager = new DataManager();
 
-        // SORTERS: Lista de algoritmos de ordenamiento disponibles
+        // SORTERS: Lista de métodos algorítmicos disponibles
         // 
         // List<ISorter> es una LISTA que contiene objetos que implementan la interfaz ISorter.
         // Es como tener una lista de empleados, donde cada uno sabe hacer su trabajo específico.
         //
         // ¿Por qué usar una lista?
         // - Fácil de recorrer con un ciclo for para mostrar opciones al usuario
-        // - Fácil de expandir: si queremos agregar MergeSorter, solo lo agregamos aquí
+        // - Fácil de expandir: si queremos agregar más algoritmos, solo los agregamos aquí
         // - El código del menú no cambia, solo esta lista
         //
         // La sintaxis { } se llama "inicializador de colección":
         // Es una forma corta de agregar elementos a la lista al crearla.
         static List<ISorter> Sorters = new List<ISorter>
         {
-            new BubbleSorter(),      // Algoritmo 1: Burbuja (lento pero fácil de entender)
-            new InsertionSorter(),   // Algoritmo 2: Inserción (bueno para listas casi ordenadas)
-            new QuickSorter()        // Algoritmo 3: Quicksort (rápido para listas grandes)
+            new HeapSorter(),        // Algoritmo 1: Heapsort (ordenamiento por montículo)
+            new MergeSorter()        // Algoritmo 2: MergeSort (ordenamiento por mezcla - divide y conquista)
         };
 
         // SEARCHERS: Lista de algoritmos de búsqueda disponibles
         // 
         // Similar a Sorters, pero para algoritmos de búsqueda.
         // Cada algoritmo sabe buscar un número en un arreglo de manera diferente:
-        // - LinearSearcher: revisa elemento por elemento (no requiere orden)
-        // - BinarySearcher: divide el arreglo a la mitad repetidamente (REQUIERE orden)
+        // - InterpolationSearcher: estima la posición basándose en el valor (requiere orden)
+        // - HashSearcher: usa tabla hash para acceso instantáneo (no requiere orden)
         static List<ISearcher> Searchers = new List<ISearcher>
         {
-            new LinearSearcher(),    // Búsqueda Lineal: simple pero puede ser lenta
-            new BinarySearcher()     // Búsqueda Binaria: rápida pero necesita datos ordenados
+            new InterpolationSearcher(),  // Búsqueda por Interpolación: rápida con datos uniformes
+            new HashSearcher()            // Búsqueda por Hash: ultra rápida con tabla hash
         };
 
         // ================================================================================================
@@ -135,7 +134,7 @@ namespace MetodosAlgoritmicosyBusqueda
                 // \n significa "nueva línea" (salto de línea)
                 // Es como presionar Enter en un editor de texto.
                 Console.WriteLine("\nMenú Principal:");
-                Console.WriteLine("1. Métodos de Ordenamiento");
+                Console.WriteLine("1. Métodos Algorítmicos");
                 Console.WriteLine("2. Métodos de Búsqueda");
                 Console.WriteLine("3. Gestionar Datos (Personalizar arreglo)");
                 Console.WriteLine("4. Salir");
@@ -173,7 +172,7 @@ namespace MetodosAlgoritmicosyBusqueda
                 switch (choice)
                 {
                     case "1":  // Si el usuario escribió "1"
-                        ShowSortingMenu();  // Llamamos al método que muestra el menú de ordenamiento
+                        ShowSortingMenu();  // Llamamos al método que muestra el menú de métodos algorítmicos
                         break;  // "break" significa "sal del switch, ya terminamos este caso"
                                 // Sin break, el código seguiría ejecutando los casos siguientes
                     
@@ -203,9 +202,9 @@ namespace MetodosAlgoritmicosyBusqueda
         }  // Fin del método Main
 
         // ================================================================================================
-        // MÉTODO SHOWSORTINGMENU - Menú de Algoritmos de Ordenamiento
+        // MÉTODO SHOWSORTINGMENU - Menú de Métodos Algorítmicos
         // ================================================================================================
-        // Este método se encarga de mostrar las opciones de ordenamiento al usuario,
+        // Este método se encarga de mostrar las opciones de métodos algorítmicos al usuario,
         // permitirle elegir un algoritmo, y ejecutarlo.
         //
         // "static" = puede ser llamado sin crear un objeto de la clase Program
@@ -217,11 +216,11 @@ namespace MetodosAlgoritmicosyBusqueda
             while (true)
             {
                 // ========================================================================================
-                // MOSTRAR MENÚ DE ORDENAMIENTO
+                // MOSTRAR MENÚ DE MÉTODOS ALGORÍTMICOS
                 // ========================================================================================
                 Console.Clear();
                 Console.WriteLine("---------------------------------------------");
-                Console.WriteLine("          Métodos de Ordenamiento");
+                Console.WriteLine("          Métodos Algorítmicos");
                 Console.WriteLine("---------------------------------------------");
                 dataManager.ShowCurrentData();
                 Console.WriteLine();
@@ -255,9 +254,9 @@ namespace MetodosAlgoritmicosyBusqueda
                 }
                 
                 // Mostrar opción para volver al menú principal
-                // Sorters.Count + 1 = si hay 3 algoritmos, esta será la opción 4
+                // Sorters.Count + 1 = si hay 2 algoritmos, esta será la opción 3
                 Console.WriteLine($"{Sorters.Count + 1}. Volver al menú principal");
-                Console.Write("\nElige un algoritmo de ordenamiento: ");
+                Console.Write("\nElige un método algorítmico: ");
 
                 // ========================================================================================
                 // VALIDAR LA ENTRADA DEL USUARIO
@@ -285,7 +284,7 @@ namespace MetodosAlgoritmicosyBusqueda
                     
                     // "continue" - salta al inicio del bucle while inmediatamente
                     // Es como decir "ignora todo lo que viene después y vuelve a empezar el ciclo"
-                    // En este caso, vuelve a mostrar el menú de ordenamiento
+                    // En este caso, vuelve a mostrar el menú de métodos algorítmicos
                     continue;
                 }
                 
@@ -390,9 +389,9 @@ namespace MetodosAlgoritmicosyBusqueda
                     Console.WriteLine("¡Datos actualizados!");
                 }
 
-                Console.WriteLine("\nPresiona Enter para volver al menú de ordenamiento.");
+                Console.WriteLine("\nPresiona Enter para volver al menú de métodos algorítmicos.");
                 Console.ReadLine();
-            }  // Fin del while(true) - vuelve a mostrar el menú de ordenamiento
+            }  // Fin del while(true) - vuelve a mostrar el menú de métodos algorítmicos
         }  // Fin del método ShowSortingMenu
 
         // ================================================================================================

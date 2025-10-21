@@ -1,6 +1,6 @@
-# Herramienta Educativa de Algoritmos (C# - Consola)
+# Herramienta Educativa de Métodos Algorítmicos y Búsqueda (C# - Consola)
 
-Proyecto de consola orientado a objetos que demuestra métodos de ordenamiento y búsqueda para uso en clases, con funcionalidades interactivas y personalizables.
+Proyecto de consola orientado a objetos que demuestra **métodos algorítmicos** (Heapsort, MergeSort) y **métodos de búsqueda** (Interpolación, Hash) para uso en clases, con funcionalidades interactivas y personalizables.
 
 ## Cómo ejecutar
 
@@ -27,15 +27,14 @@ dotnet run
 - **Estadísticas detalladas**: Cuenta comparaciones, intercambios y tiempo de ejecución
 - **Resaltado visual**: Elementos en proceso se muestran en color
 
-### 🔢 Algoritmos de Ordenamiento
-- **Bubble Sort**: Con optimización de detección temprana
-- **Insertion Sort**: Visualiza desplazamientos e inserciones
-- **Quicksort**: Muestra particiones y colocación de pivotes
+### 🔢 Métodos Algorítmicos
+- **Heapsort**: Ordenamiento por montículo con visualización de construcción del heap
+- **MergeSort**: Ordenamiento por mezcla (divide y conquista) con seguimiento de divisiones
 
 ### 🔍 Algoritmos de Búsqueda
-- **Linear Search**: Búsqueda secuencial en arreglos desordenados
-- **Binary Search**: Búsqueda eficiente con opción de ordenar primero
-- **Advertencias inteligentes**: Te avisa si intentas búsqueda binaria sin ordenar
+- **Búsqueda por Interpolación**: Estimación inteligente de posición basada en valores (requiere ordenar)
+- **Búsqueda por Hash**: Acceso instantáneo O(1) mediante tabla hash/diccionario
+- **Advertencias inteligentes**: Te avisa si la búsqueda requiere ordenamiento
 
 ### 📈 Métricas de Rendimiento
 - Tiempo de ejecución en milisegundos
