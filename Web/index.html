@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Algoritmos - Métodos Algorítmicos y Búsqueda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Visualizador de Algoritmos</h1>
+            <p class="subtitle">Métodos Algorítmicos y Métodos de Búsqueda</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Panel de Control -->
+            <div class="control-panel">
+                <h2>⚙️ Configuración</h2>
+                
+                <div class="control-group">
+                    <label>Tipo de Algoritmo:</label>
+                    <select id="algorithmType">
+                        <option value="sort">Métodos Algorítmicos (Ordenamiento)</option>
+                        <option value="search">Métodos de Búsqueda</option>
+                    </select>
+                </div>
+
+                <div class="control-group" id="sortAlgorithms">
+                    <label>Algoritmo de Ordenamiento:</label>
+                    <select id="sortAlgorithm">
+                        <option value="heap">HeapSort</option>
+                        <option value="merge">MergeSort</option>
+                        <option value="quick">QuickSort</option>
+                    </select>
+                </div>
+
+                <div class="control-group hidden" id="searchAlgorithms">
+                    <label>Algoritmo de Búsqueda:</label>
+                    <select id="searchAlgorithm">
+                        <option value="interpolation">Búsqueda por Interpolación</option>
+                        <option value="hash">Búsqueda Hash</option>
+                    </select>
+                    <div class="search-input">
+                        <label>Valor a buscar:</label>
+                        <input type="number" id="searchValue" value="42">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Tamaño del Array:</label>
+                    <input type="range" id="arraySize" min="5" max="50" value="15">
+                    <span id="arraySizeValue">15</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Velocidad de Animación:</label>
+                    <input type="range" id="speed" min="50" max="2000" value="500" step="50">
+                    <span id="speedValue">500ms</span>
+                </div>
+
+                <div class="button-group">
+                    <button id="generateArray" class="btn btn-primary">🔄 Generar Array Aleatorio</button>
+                    <button id="startVisualization" class="btn btn-success">▶️ Iniciar Visualización</button>
+                    <button id="resetVisualization" class="btn btn-warning">⏹️ Reiniciar</button>
+                </div>
+
+                <div id="stats" class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Comparaciones:</span>
+                        <span id="comparisons" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Intercambios:</span>
+                        <span id="swaps" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Tiempo:</span>
+                        <span id="time" class="stat-value">0ms</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Área de Visualización -->
+            <div class="visualization-area">
+                <h2 id="visualizationTitle">Visualización del Algoritmo</h2>
+                
+                <div id="arrayVisualization" class="array-visualization"></div>
+                
+                <div id="realLifeExample" class="real-life-example">
+                    <h3>🌍 Ejemplo de la Vida Cotidiana</h3>
+                    <div id="realLifeContent" class="real-life-content">
+                        <p id="realLifeText">Selecciona un algoritmo para ver cómo lo usas en tu día a día.</p>
+                        <div id="realLifeAnimation" class="real-life-animation"></div>
+                    </div>
+                </div>
+
+                <div id="explanation" class="explanation">
+                    <h3>📚 Explicación Técnica</h3>
+                    <p id="explanationText">Selecciona un algoritmo y genera un array para comenzar.</p>
+                </div>
+
+                <div id="stepInfo" class="step-info">
+                    <h3>🔍 Paso Actual</h3>
+                    <p id="stepText">Esperando inicio...</p>
+                </div>
+
+                <div id="codeView" class="code-view">
+                    <h3>💻 Pseudocódigo</h3>
+                    <pre id="pseudocode">// El pseudocódigo aparecerá aquí</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
